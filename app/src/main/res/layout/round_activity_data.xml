@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.virginia.cs.mooncake.wada.DataActivity"
+    tools:deviceIds="wear_round">
+
+    <Button
+        android:id="@+id/btnDataConfigSetDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvConfig"
+        android:layout_centerHorizontal="true"
+        android:onClick="btnClick"
+        android:text="Delete Config" />
+
+    <TextView
+        android:id="@+id/tvConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDataList"
+        android:layout_centerHorizontal="true"
+        android:text="Config: N/A" />
+
+    <Button
+        android:id="@+id/btnDataList"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="btnClick"
+        android:text="List" />
+
+    <Button
+        android:id="@+id/btnDataDeleteAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvFileCount"
+        android:layout_centerHorizontal="true"
+        android:onClick="btnClick"
+        android:text="Delete all" />
+
+    <TextView
+        android:id="@+id/tvFileCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:text="File Count: " />
+</RelativeLayout>

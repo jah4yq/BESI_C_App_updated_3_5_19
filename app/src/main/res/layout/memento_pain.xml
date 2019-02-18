@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PainActivity">
+    >
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="151dp"
+        android:layout_height="78dp"
+        android:layout_below="@+id/painButton"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:onClick="backClick"
+        android:text="Back"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/painButton"
+        android:layout_width="151dp"
+        android:layout_height="77dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:onClick="painClick"
+        android:text="Pain"
+        android:textSize="40dp" />
+</RelativeLayout>

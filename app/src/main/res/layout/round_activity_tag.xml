@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.virginia.cs.mooncake.wada.TagActivity"
+    tools:deviceIds="wear_round">
+
+    <TextView
+        android:id="@+id/tvTagAll"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSelectSubject"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-38dp"
+        android:singleLine="true"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnSelectDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioHandLeft"
+        android:layout_toEndOf="@+id/btnSelectCancel"
+        android:layout_weight="0.5"
+        android:onClick="btnClick"
+        android:text="Select" />
+
+    <Button
+        android:id="@+id/btnSelectCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioHandLeft"
+        android:layout_marginStart="19dp"
+        android:layout_weight="0.5"
+        android:onClick="btnClick"
+        android:text="Cancel" />
+
+    <RadioButton
+        android:id="@+id/radioHandRight"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSelectSubject"
+        android:layout_toEndOf="@+id/radioHandLeft"
+        android:checked="false"
+        android:text="Right" />
+
+    <RadioButton
+        android:id="@+id/radioHandLeft"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSelectSubject"
+        android:layout_toEndOf="@+id/tvHand"
+        android:checked="true"
+        android:text="Left " />
+
+    <TextView
+        android:id="@+id/tvHand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnSelectSubject"
+        android:layout_marginStart="11dp"
+        android:paddingTop="8dp"
+        android:singleLine="true"
+        android:text=" Hand: " />
+
+    <Button
+        android:id="@+id/btnSelectInfo"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_alignTop="@+id/btnSelectSubject"
+        android:layout_toEndOf="@+id/btnSelectActivity"
+        android:layout_weight="0.5"
+        android:onClick="btnClick"
+        android:text="Info" />
+
+    <Button
+        android:id="@+id/btnSelectActivity"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_alignTop="@+id/btnSelectSubject"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="0.5"
+        android:onClick="btnClick"
+        android:text="Act" />
+
+    <Button
+        android:id="@+id/btnSelectSubject"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="38dp"
+        android:layout_weight="0.5"
+        android:onClick="btnClick"
+        android:text="Sub" />
+</RelativeLayout>
