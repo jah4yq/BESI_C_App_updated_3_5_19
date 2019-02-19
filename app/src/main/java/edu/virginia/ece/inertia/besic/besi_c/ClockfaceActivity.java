@@ -46,6 +46,13 @@ public class ClockfaceActivity extends Activity {
     public static Button sleep;
 
 
+    public static String PTorCG = "PT";
+    int EMA_HOUR = 21;
+    int EMA_MINUTE = 30;
+
+
+
+
     private static final String FILE_NAME = "pain.txt";
 
     private TextView batteryTxt;
@@ -390,8 +397,8 @@ public class ClockfaceActivity extends Activity {
 
 // Schedule Daily EMA below
 
-        int hour =21;
-        int minute =41;
+        int hour = EMA_HOUR;
+        int minute = EMA_MINUTE;
 
         //Calendar precalendar= Calendar.getInstance();
         Calendar calendar = Calendar.getInstance();

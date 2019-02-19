@@ -3,10 +3,12 @@ package edu.virginia.ece.inertia.besic.besi_c;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.BatteryManager;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.util.Log;
@@ -131,6 +133,17 @@ public class WatchSensorService extends Service implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
 
+        Context context = this;
+        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        Intent batteryStatus = context.registerReceiver(null, ifilter);
+
+        // Are we charging / charged?
+        int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+
+        boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                status == BatteryManager.BATTERY_STATUS_FULL;
+
+
         sensorType = event.sensor.getType();
         if (sensorType == Sensor.TYPE_HEART_RATE){
             //strBuilder.append("HR TEST");
@@ -234,6 +247,22 @@ public class WatchSensorService extends Service implements SensorEventListener {
             strBuilder.append(event.values[1]);
             strBuilder.append(",");
             strBuilder.append(event.values[2]);
+            strBuilder.append(",");
+
+            long timeInMillis2 = System.currentTimeMillis();
+
+            //long yourmilliseconds = timeInMillis - 259754000L;
+            long yourmilliseconds = timeInMillis2;
+            //SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss.SSS");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS a");
+            Date resultdate = new Date(yourmilliseconds);
+
+            //String event_timestamp = sdf.format(resultdate);
+
+            strBuilder.append(sdf.format(resultdate));
+            strBuilder.append(",");
+            strBuilder.append(isCharging);
+
         }
         else if (sensorType == Sensor.TYPE_GYROSCOPE) {
 

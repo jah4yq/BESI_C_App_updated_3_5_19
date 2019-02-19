@@ -129,8 +129,12 @@ public class dEMAActivity extends Activity {
         }
         if (EMAcount == 5){
 
-            //question = "How much did pain interfere with your life?";
-            question = "How did the patient's pain interfere with your life?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How much did pain interfere with your life?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How did the patient's pain interfere with your life?";
+            }
 
             String[] answer = {"None", "A little", "Medium", "A lot"};
 
@@ -156,8 +160,12 @@ public class dEMAActivity extends Activity {
         }
         if (EMAcount == 7){
 
-            //question = "How distressed was your caregiver overall?";
-            question = "How distressed was the patient overall?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed was your caregiver overall?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed was the patient overall?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -178,7 +186,7 @@ public class dEMAActivity extends Activity {
             q.setText(question);
 
             a = (TextView)findViewById(R.id.answerView);
-            a.setText(answer[p%4]);
+            a.setText(answer[r%4]);
 
         }
 
@@ -292,8 +300,12 @@ public class dEMAActivity extends Activity {
 
             n++;
 
-            //question = "How much did pain interfere with your life?";
-            question = "How did the patient's pain interfere with your life?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How much did pain interfere with your life?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How did the patient's pain interfere with your life?";
+            }
 
             String[] answer = {"None", "A little", "Medium", "A lot"};
 
@@ -323,8 +335,12 @@ public class dEMAActivity extends Activity {
 
             p++;
 
-            //question = "How distressed was your caregiver overall?";
-            question = "How distressed was the patient overall?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed was your caregiver overall?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed was the patient overall?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -347,7 +363,7 @@ public class dEMAActivity extends Activity {
             q.setText(question);
 
             a = (TextView)findViewById(R.id.answerView);
-            a.setText(answer[p%4]);
+            a.setText(answer[r%4]);
 
         }
 
@@ -524,8 +540,12 @@ public class dEMAActivity extends Activity {
         }
         if (EMAcount == 5){
 
-            //question = "How much did pain interfere with your life?";
-            question = "How did the patient's pain interfere with your life?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How much did pain interfere with your life?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How did the patient's pain interfere with your life?";
+            }
 
             String[] answer = {"None", "A little", "Medium", "A lot"};
 
@@ -551,8 +571,12 @@ public class dEMAActivity extends Activity {
         }
         if (EMAcount == 7){
 
-            //question = "How distressed was your caregiver overall?";
-            question = "How distressed was the patient overall?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed was your caregiver overall?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed was the patient overall?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -575,7 +599,7 @@ public class dEMAActivity extends Activity {
             q.setText(question);
 
             a = (TextView)findViewById(R.id.answerView);
-            a.setText(answer[p%4]);
+            a.setText(answer[r%4]);
 
         }
         if (EMAcount >= 9){
@@ -685,8 +709,12 @@ public class dEMAActivity extends Activity {
             }
             if (EMAcount == 5){
 
-                //question = "How much did pain interfere with your life?";
-                question = "How did the patient's pain interfere with your life?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "How much did pain interfere with your life?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "How did the patient's pain interfere with your life?";
+                }
 
                 String[] answer = {"None", "A little", "Medium", "A lot"};
 
@@ -712,8 +740,12 @@ public class dEMAActivity extends Activity {
             }
             if (EMAcount == 7){
 
-                //question = "How distressed was your caregiver overall?";
-                question = "How distressed was the patient overall?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "How distressed was your caregiver overall?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "How distressed was the patient overall?";
+                }
 
                 String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -736,7 +768,7 @@ public class dEMAActivity extends Activity {
                 q.setText(question);
 
                 a = (TextView)findViewById(R.id.answerView);
-                a.setText(answer[p%4]);
+                a.setText(answer[r%4]);
 
             }
 

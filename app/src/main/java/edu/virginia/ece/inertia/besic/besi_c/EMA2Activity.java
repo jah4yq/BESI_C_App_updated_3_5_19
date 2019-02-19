@@ -53,8 +53,12 @@ public class EMA2Activity extends Activity {
 
         if (EMAcount == 0) {
 
-            //question = "Are you still having cancer pain now?";
-            question = "Is the patient still having cancer pain now?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Are you still having cancer pain now?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Is the patient still having cancer pain now?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -70,8 +74,12 @@ public class EMA2Activity extends Activity {
 
             //i=5;
 
-            //question = "What is your pain level?";
-            question = "What is the patient's pain level?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "What is your pain level?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "What is the patient's pain level?";
+            }
 
             String[] answer = {"1","2","3","4","5","6","7","8","9","10"};
 
@@ -101,8 +109,12 @@ public class EMA2Activity extends Activity {
 
             //i=2;
 
-            //question = "How distressed is your caregiver?";
-            question = "How distressed is the patient?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed is your caregiver?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed is the patient?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -115,8 +127,12 @@ public class EMA2Activity extends Activity {
         }
         if (EMAcount == 4){
 
-            //question = "Did you take an additional opioid for the pain?";
-            question = "Did the patient take an additional opioid for the pain?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Did you take an additional opioid for the pain?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Did the patient take an additional opioid for the pain?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -157,8 +173,12 @@ public class EMA2Activity extends Activity {
 
             i++;
 
-            //question = "Are you still having cancer pain now?";
-            question = "Is the patient still having cancer pain now?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Are you still having cancer pain now?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Is the patient still having cancer pain now?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -175,8 +195,12 @@ public class EMA2Activity extends Activity {
             j++;
             //i=5;
 
-            //question = "What is your pain level?";
-            question = "What is the patient's pain level?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "What is your pain level?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "What is the patient's pain level?";
+            }
 
             String[] answer = {"1","2","3","4","5","6","7","8","9","10"};
 
@@ -210,8 +234,12 @@ public class EMA2Activity extends Activity {
 
             //i=2;
 
-            //question = "How distressed is your caregiver?";
-            question = "How distressed is the patient?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed is your caregiver?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed is the patient?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -226,8 +254,12 @@ public class EMA2Activity extends Activity {
 
             n++;
 
-            //question = "Did you take an additional opioid for the pain?";
-            question = "Did the patient take an additional opioid for the pain?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Did you take an additional opioid for the pain?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Did the patient take an additional opioid for the pain?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -329,8 +361,12 @@ public class EMA2Activity extends Activity {
 
         if (EMAcount == 0) {
 
-            //question = "Are you still having cancer pain now?";
-            question = "Is the patient still having cancer pain now?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Are you still having cancer pain now?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Is the patient still having cancer pain now?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -347,8 +383,12 @@ public class EMA2Activity extends Activity {
 
             //i = 5*100000000;
 
-            //question = "What is your pain level?";
-            question = "What is the patient's pain level?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "What is your pain level?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "What is the patient's pain level?";
+            }
 
             String[] answer = {"1","2","3","4","5","6","7","8","9","10"};
 
@@ -376,8 +416,12 @@ public class EMA2Activity extends Activity {
 
             //i=2;
 
-            //question = "How distressed is your caregiver?";
-            question = "How distressed is the patient?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed is your caregiver?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed is the patient?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -390,8 +434,12 @@ public class EMA2Activity extends Activity {
         }
         if (EMAcount == 4){
 
-            //question = "Did you take an additional opioid for the pain?";
-            question = "Did the patient take an additional opioid for the pain?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Did you take an additional opioid for the pain?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Did the patient take an additional opioid for the pain?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -502,8 +550,12 @@ public class EMA2Activity extends Activity {
 
                 //minusButton.setEnabled(false);
 
-                //question = "Are you in pain now?";
-                question = "Is the patient having cancer pain now?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "Are you in pain now?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "Is the patient having cancer pain now?";
+                }
 
                 String[] answer = {"YES", "NO"};
 
@@ -520,8 +572,12 @@ public class EMA2Activity extends Activity {
 
                 //i = 5 * 100000000;
 
-                //question = "What is your pain level?";
-                question = "What is the patient's pain level?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "What is your pain level?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "What is the patient's pain level?";
+                }
 
                 String[] answer = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
@@ -549,8 +605,12 @@ public class EMA2Activity extends Activity {
 
                 //i=2;
 
-                //question = "How distressed is your caregiver?";
-                question = "How distressed is the patient?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "How distressed is your caregiver?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "How distressed is the patient?";
+                }
 
                 String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -563,8 +623,15 @@ public class EMA2Activity extends Activity {
             }
             if (EMAcount == 4) {
 
-                //question = "Did you take an opioid for the pain?";
-                question = "Did the patient take an additional opioid for the pain?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "Did you take an opioid for the pain?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "Did the patient take an additional opioid for the pain?";
+                }
+
+
+
 
                 String[] answer = {"YES", "NO"};
 

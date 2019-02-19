@@ -40,7 +40,7 @@ public class EMAActivity extends Activity {
         setContentView(R.layout.memento_ema);
 
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(500);
+        v.vibrate(1000);
 
         Log.i("EMA_FLAG = ", Integer.toString(EMA_FLAG));
 
@@ -56,8 +56,12 @@ public class EMAActivity extends Activity {
 
             //minusButton.setEnabled(false);
 
-            //question = "Are you in pain now?";
-            question = "Is the patient having cancer pain now?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Are you in pain now?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Is the patient having cancer pain now?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -73,8 +77,12 @@ public class EMAActivity extends Activity {
 
             //i=5;
 
-            //question = "What is your pain level?";
-            question = "What is the patient's pain level?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "What is your pain level?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "What is the patient's pain level?";
+            }
 
             String[] answer = {"1","2","3","4","5","6","7","8","9","10"};
 
@@ -104,8 +112,12 @@ public class EMAActivity extends Activity {
 
             //i=2;
 
-            //question = "How distressed is your caregiver?";
-            question = "How distressed is the patient?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed is your caregiver?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed is the patient?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -118,8 +130,12 @@ public class EMAActivity extends Activity {
         }
         if (EMAcount == 4){
 
-            //question = "Did you take an opioid for the pain?";
-            question = "Did the patient take an opioid for the pain?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Did you take an opioid for the pain?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Did the patient take an opioid for the pain?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -194,16 +210,28 @@ public class EMAActivity extends Activity {
 
             //minusButton.setEnabled(false);
 
-            //question = "Are you in pain now?";
-            question = "Is the patient having cancer pain now?";
 
-            String[] answer = {"YES", "NO"};
 
-            q = (TextView)findViewById(R.id.questionView);
-            q.setText(question);
+                //minusButton.setEnabled(false);
 
-            a = (Button)findViewById(R.id.answerView);
-            a.setText(answer[i%2]);
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "Are you in pain now?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "Is the patient having cancer pain now?";
+                }
+
+                String[] answer = {"YES", "NO"};
+
+                q = (TextView)findViewById(R.id.questionView);
+                q.setText(question);
+
+                a = (Button)findViewById(R.id.answerView);
+                a.setText(answer[i%2]);
+
+
+
+
 
 
         }
@@ -212,16 +240,26 @@ public class EMAActivity extends Activity {
 
             //i=5;
 
-            //question = "What is your pain level?";
-            question = "What is the patient's pain level?";
 
-            String[] answer = {"1","2","3","4","5","6","7","8","9","10"};
+                //i=5;
 
-            q = (TextView)findViewById(R.id.questionView);
-            q.setText(question);
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "What is your pain level?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "What is the patient's pain level?";
+                }
 
-            a = (Button)findViewById(R.id.answerView);
-            a.setText(answer[j%10]);
+                String[] answer = {"1","2","3","4","5","6","7","8","9","10"};
+
+                q = (TextView)findViewById(R.id.questionView);
+                q.setText(question);
+
+                a = (Button)findViewById(R.id.answerView);
+                a.setText(answer[j%10]);
+
+
+
 
         }
         if (EMAcount == 2) {
@@ -245,32 +283,52 @@ public class EMAActivity extends Activity {
             m++;
             //i=2;
 
-            //question = "How distressed is your caregiver?";
-            question = "How distressed is the patient?";
 
-            String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
-            q = (TextView)findViewById(R.id.questionView);
-            q.setText(question);
 
-            a = (Button)findViewById(R.id.answerView);
-            a.setText(answer[m%5]);
+                //i=2;
+
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "How distressed is your caregiver?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "How distressed is the patient?";
+                }
+
+                String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
+
+                q = (TextView)findViewById(R.id.questionView);
+                q.setText(question);
+
+                a = (Button)findViewById(R.id.answerView);
+                a.setText(answer[m%5]);
+
+
+
 
         }
         if (EMAcount == 4){
 
             n++;
 
-            //question = "Did you take an opioid for the pain?";
-            question = "Did the patient take an opioid for the pain?";
 
-            String[] answer = {"YES", "NO"};
 
-            q = (TextView)findViewById(R.id.questionView);
-            q.setText(question);
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "Did you take an opioid for the pain?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "Did the patient take an opioid for the pain?";
+                }
 
-            a = (Button)findViewById(R.id.answerView);
-            a.setText(answer[n%2]);
+                String[] answer = {"YES", "NO"};
+
+                q = (TextView)findViewById(R.id.questionView);
+                q.setText(question);
+
+                a = (Button)findViewById(R.id.answerView);
+                a.setText(answer[n%2]);
+
+
 
         }
 
@@ -356,8 +414,12 @@ public class EMAActivity extends Activity {
 
             //minusButton.setEnabled(false);
 
-            //question = "Are you in pain now?";
-            question = "Is the patient having cancer pain now?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Are you in pain now?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Is the patient having cancer pain now?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -374,8 +436,12 @@ public class EMAActivity extends Activity {
 
             //i = 5*100000000;
 
-            //question = "What is your pain level?";
-            question = "What is the patient's pain level?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "What is your pain level?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "What is the patient's pain level?";
+            }
 
             String[] answer = {"1","2","3","4","5","6","7","8","9","10"};
 
@@ -403,8 +469,12 @@ public class EMAActivity extends Activity {
 
             //i=2;
 
-            //question = "How distressed is your caregiver?";
-            question = "How distressed is the patient?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "How distressed is your caregiver?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "How distressed is the patient?";
+            }
 
             String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -417,8 +487,12 @@ public class EMAActivity extends Activity {
         }
         if (EMAcount == 4){
 
-            //question = "Did you take an opioid for the pain?";
-            question = "Did the patient take an opioid for the pain?";
+            if (ClockfaceActivity.PTorCG == "PT"){
+                question = "Did you take an opioid for the pain?";
+            }
+            if (ClockfaceActivity.PTorCG == "CG"){
+                question = "Did the patient take an opioid for the pain?";
+            }
 
             String[] answer = {"YES", "NO"};
 
@@ -454,6 +528,7 @@ public class EMAActivity extends Activity {
 
             EMA_cal.setTimeInMillis(EMA_time + 1800000L); //THIS ONE!!!
             //EMA_cal.setTimeInMillis(EMA_time + 10000L);
+            //EMA_cal.setTimeInMillis(EMA_time + 45000L);
 
             Intent EMA_intent = new Intent(this, EMA2Activity.class);
 
@@ -489,8 +564,12 @@ public class EMAActivity extends Activity {
 
                 //minusButton.setEnabled(false);
 
-                //question = "Are you in pain now?";
-                question = "Is the patient having cancer pain now?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "Are you in pain now?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "Is the patient having cancer pain now?";
+                }
 
                 String[] answer = {"YES", "NO"};
 
@@ -507,8 +586,12 @@ public class EMAActivity extends Activity {
 
                 i = 5 * 100000000;
 
-                //question = "What is your pain level?";
-                question = "What is the patient's pain level?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "What is your pain level?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "What is the patient's pain level?";
+                }
 
                 String[] answer = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
@@ -536,8 +619,12 @@ public class EMAActivity extends Activity {
 
                 //i=2;
 
-                //question = "How distressed is your caregiver?";
-                question = "How distressed is the patient?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "How distressed is your caregiver?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "How distressed is the patient?";
+                }
 
                 String[] answer = {"Not at all", "A little", "Moderately", "Very", "Unsure"};
 
@@ -550,8 +637,13 @@ public class EMAActivity extends Activity {
             }
             if (EMAcount == 4) {
 
-                //question = "Did you take an opioid for the pain?";
-                question = "Did the patient take an opioid for the pain?";
+                if (ClockfaceActivity.PTorCG == "PT"){
+                    question = "Did you take an opioid for the pain?";
+                }
+                if (ClockfaceActivity.PTorCG == "CG"){
+                    question = "Did the patient take an opioid for the pain?";
+
+                }
 
                 String[] answer = {"YES", "NO"};
 
