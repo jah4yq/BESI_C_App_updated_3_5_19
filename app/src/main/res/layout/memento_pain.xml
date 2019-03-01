@@ -14,8 +14,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:onClick="backClick"
-        android:text="Back"
-        android:textSize="40dp" />
+        android:text="Cancel"
+        android:textSize="35dp" />
 
     <Button
         android:id="@+id/painButton"

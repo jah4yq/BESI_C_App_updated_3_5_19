@@ -52,6 +52,8 @@ public class dEMAActivity extends Activity {
 
 
 
+
+
         //date.format(new Date(System.currentTimeMillis()));
 
 
@@ -160,6 +162,19 @@ public class dEMAActivity extends Activity {
         }
         if (EMAcount == 7){
 
+            question = "How would you rate your sleep quality?";
+
+            String[] answer = {"Poor", "Fair", "Good", "Excellent"};
+
+            q = (TextView)findViewById(R.id.questionView);
+            q.setText(question);
+
+            a = (TextView)findViewById(R.id.answerView);
+            a.setText(answer[r%4]);
+
+        }
+        if (EMAcount == 8){
+
             if (ClockfaceActivity.PTorCG == "PT"){
                 question = "How distressed was your caregiver overall?";
             }
@@ -176,19 +191,7 @@ public class dEMAActivity extends Activity {
             a.setText(answer[p%5]);
 
         }
-        if (EMAcount == 7){
 
-            question = "How would you rate your sleep quality?";
-
-            String[] answer = {"Poor", "Fair", "Good", "Excellent"};
-
-            q = (TextView)findViewById(R.id.questionView);
-            q.setText(question);
-
-            a = (TextView)findViewById(R.id.answerView);
-            a.setText(answer[r%4]);
-
-        }
 
 
 
@@ -198,6 +201,17 @@ public class dEMAActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        long yourmillis = System.currentTimeMillis();
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate2 = new Date(yourmillis);
+
+        String pagesMetricText = "dEMAActivity" + sdf2.format(resultdate2) + "\n";
+        String fileName2 = "pages";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName2, pagesMetricText);
+
 
         ClockfaceActivity.STATE=9;
         ClockfaceActivity.DISABLE=0;
@@ -212,6 +226,16 @@ public class dEMAActivity extends Activity {
     }
 
     public void incClick(View v) {
+
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
+
+        String buttonMetricText = "dEMAAcivity, TOGGLE, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
 
 
         if (EMAcount == 0) {
@@ -333,6 +357,21 @@ public class dEMAActivity extends Activity {
         }
         if (EMAcount == 7){
 
+            r++;
+
+            question = "How would you rate your sleep quality?";
+
+            String[] answer = {"Poor", "Fair", "Good", "Excellent"};
+
+            q = (TextView)findViewById(R.id.questionView);
+            q.setText(question);
+
+            a = (TextView)findViewById(R.id.answerView);
+            a.setText(answer[r%4]);
+
+        }
+        if (EMAcount == 8){
+
             p++;
 
             if (ClockfaceActivity.PTorCG == "PT"){
@@ -351,21 +390,7 @@ public class dEMAActivity extends Activity {
             a.setText(answer[p%5]);
 
         }
-        if (EMAcount == 8){
 
-            r++;
-
-            question = "How would you rate your sleep quality?";
-
-            String[] answer = {"Poor", "Fair", "Good", "Excellent"};
-
-            q = (TextView)findViewById(R.id.questionView);
-            q.setText(question);
-
-            a = (TextView)findViewById(R.id.answerView);
-            a.setText(answer[r%4]);
-
-        }
 
 
         //setEMA(answer,question,answer[i]);
@@ -375,7 +400,15 @@ public class dEMAActivity extends Activity {
 
     public void nextClick(View v) {
 
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
 
+        String buttonMetricText = "dEMAAcivity, NEXT, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
 
         //Save answer
 
@@ -571,6 +604,21 @@ public class dEMAActivity extends Activity {
         }
         if (EMAcount == 7){
 
+            //r++;
+
+            question = "How would you rate your sleep quality?";
+
+            String[] answer = {"Poor", "Fair", "Good", "Excellent"};
+
+            q = (TextView)findViewById(R.id.questionView);
+            q.setText(question);
+
+            a = (TextView)findViewById(R.id.answerView);
+            a.setText(answer[r%4]);
+
+        }
+        if (EMAcount == 8){
+
             if (ClockfaceActivity.PTorCG == "PT"){
                 question = "How distressed was your caregiver overall?";
             }
@@ -585,21 +633,6 @@ public class dEMAActivity extends Activity {
 
             a = (TextView)findViewById(R.id.answerView);
             a.setText(answer[p%5]);
-
-        }
-        if (EMAcount == 8){
-
-            //r++;
-
-            question = "How would you rate your sleep quality?";
-
-            String[] answer = {"Poor", "Fair", "Good", "Excellent"};
-
-            q = (TextView)findViewById(R.id.questionView);
-            q.setText(question);
-
-            a = (TextView)findViewById(R.id.answerView);
-            a.setText(answer[r%4]);
 
         }
         if (EMAcount >= 9){
@@ -626,6 +659,16 @@ public class dEMAActivity extends Activity {
     }
 
     public void backClick(View v) {
+
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
+
+        String buttonMetricText = "dEMAAcivity, BACK, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
 
 
         if (EMAcount == 0) {
@@ -740,6 +783,21 @@ public class dEMAActivity extends Activity {
             }
             if (EMAcount == 7){
 
+                //r++;
+
+                question = "How would you rate your sleep quality?";
+
+                String[] answer = {"Poor", "Fair", "Good", "Excellent"};
+
+                q = (TextView)findViewById(R.id.questionView);
+                q.setText(question);
+
+                a = (TextView)findViewById(R.id.answerView);
+                a.setText(answer[r%4]);
+
+            }
+            if (EMAcount == 8){
+
                 if (ClockfaceActivity.PTorCG == "PT"){
                     question = "How distressed was your caregiver overall?";
                 }
@@ -756,21 +814,7 @@ public class dEMAActivity extends Activity {
                 a.setText(answer[p%5]);
 
             }
-            if (EMAcount == 8){
 
-                //r++;
-
-                question = "How would you rate your sleep quality?";
-
-                String[] answer = {"Poor", "Fair", "Good", "Excellent"};
-
-                q = (TextView)findViewById(R.id.questionView);
-                q.setText(question);
-
-                a = (TextView)findViewById(R.id.answerView);
-                a.setText(answer[r%4]);
-
-            }
 
 
         }

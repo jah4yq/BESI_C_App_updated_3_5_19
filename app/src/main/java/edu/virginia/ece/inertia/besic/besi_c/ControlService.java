@@ -11,11 +11,13 @@ public class ControlService extends Service {
     public void onCreate() {
         super.onCreate();
 
-/*
+
         Intent dialogIntent = new Intent(this, ClockfaceActivity.class);
         dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(dialogIntent);
-*/
+
+
+
 
     }
 

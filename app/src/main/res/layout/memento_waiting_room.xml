@@ -31,22 +31,12 @@
         android:text="Proceed" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="141dp"
-        android:layout_height="58dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/holo_red_dark"
-        android:onClick="dismissClick"
-        android:text="DISMISS" />
-
-    <Button
         android:id="@+id/button3"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="21dp"
         android:background="@android:color/holo_orange_light"
         android:onClick="snoozeClick"
         android:text="Snooze" />

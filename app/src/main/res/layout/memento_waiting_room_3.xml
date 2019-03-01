@@ -39,5 +39,5 @@
         android:layout_marginBottom="25dp"
         android:background="@android:color/holo_red_dark"
         android:onClick="dismissClick"
-        android:text="Dismiss" />
+        android:text="Cancel" />
 </RelativeLayout>

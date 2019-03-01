@@ -11,7 +11,11 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+
+import static edu.virginia.ece.inertia.besic.besi_c.utils.FileUtil.saveStringToFile;
 
 
 public class WaitingRoomActivity extends Activity {
@@ -22,6 +26,8 @@ public class WaitingRoomActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memento_waiting_room);
+
+        ClockfaceActivity.dEMAEnable = 1;
 
         Context context = this;
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -41,8 +47,10 @@ public class WaitingRoomActivity extends Activity {
         }
         else {
             Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            v.vibrate(500);
+            v.vibrate(2000);
         }
+
+
 
 
     }
@@ -50,6 +58,16 @@ public class WaitingRoomActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        long yourmillis = System.currentTimeMillis();
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate2 = new Date(yourmillis);
+
+        String pagesMetricText = "WaitingRoomActivity" + sdf2.format(resultdate2) + "\n";
+        String fileName2 = "pages";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName2, pagesMetricText);
 
         ClockfaceActivity.STATE=4;
         ClockfaceActivity.DISABLE=0;
@@ -64,6 +82,16 @@ public class WaitingRoomActivity extends Activity {
     }
 
     public void snoozeClick(View v) {
+
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
+
+        String buttonMetricText = "WaitingRoomAcivity, SNOOZE, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
 
         time = System.currentTimeMillis();
         //Toast.makeText(this, "EMA_FLAG = TRUE", Toast.LENGTH_SHORT).show();
@@ -85,6 +113,18 @@ public class WaitingRoomActivity extends Activity {
     }
 
     public void proceed2EMAClick(View v) {
+
+
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
+
+        String buttonMetricText = "WaitingRoomAcivity, PROCEED, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
+
         startActivity(new Intent(this, dEMAActivity.class));
 
     }

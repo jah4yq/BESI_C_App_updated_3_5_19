@@ -9,7 +9,11 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+
+import static edu.virginia.ece.inertia.besic.besi_c.utils.FileUtil.saveStringToFile;
 
 
 public class WaitingRoomActivity2 extends Activity {
@@ -22,7 +26,7 @@ public class WaitingRoomActivity2 extends Activity {
         setContentView(R.layout.memento_waiting_room_2);
 
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(500);
+        v.vibrate(2000);
 
         Intent EMA_intent = new Intent(this, WaitingRoomActivity.class);
 
@@ -32,12 +36,24 @@ public class WaitingRoomActivity2 extends Activity {
 
         ((AlarmManager) getSystemService(ALARM_SERVICE)).cancel(pIntent);
 
+
+
     }
 
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        long yourmillis = System.currentTimeMillis();
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate2 = new Date(yourmillis);
+
+        String pagesMetricText = "WaitingRoomActivity2" + sdf2.format(resultdate2) + "\n";
+        String fileName2 = "pages";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName2, pagesMetricText);
 
         ClockfaceActivity.STATE=5;
         ClockfaceActivity.DISABLE=0;
@@ -52,6 +68,16 @@ public class WaitingRoomActivity2 extends Activity {
     }
 
     public void snoozeClick(View v) {
+
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
+
+        String buttonMetricText = "WaitingRoomAcivity2, SNOOZE, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
 
         time = System.currentTimeMillis();
         //Toast.makeText(this, "EMA_FLAG = TRUE", Toast.LENGTH_SHORT).show();
@@ -72,11 +98,33 @@ public class WaitingRoomActivity2 extends Activity {
     }
 
     public void proceed2EMAClick(View v) {
+
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
+
+        String buttonMetricText = "WaitingRoomAcivity2, PROCEED, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
+
         startActivity(new Intent(this, dEMAActivity.class));
 
     }
 
     public void dismissClick(View v) {
+
+        long yourms = System.currentTimeMillis();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate1 = new Date(yourms);
+
+        String buttonMetricText = "WaitingRoomAcivity2, CANCEL, " + sdf1.format(resultdate1) + "\n";
+        String fileName1 = "buttons";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName1, buttonMetricText);
+
         startActivity(new Intent(this, ClockfaceActivity.class));
 
     }

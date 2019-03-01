@@ -221,9 +221,11 @@ public class StepSensorService extends Service implements SensorEventListener {
             ClockfaceActivity.sleep.setBackgroundColor(Color.BLUE);
             ClockfaceActivity.SLEEP_FLAG = 0;
 
+            /*
             Intent dialogIntent = new Intent(this, ClockfaceActivity.class);
             dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(dialogIntent);
+            */
 
             /*
             strBuilder.append(",");

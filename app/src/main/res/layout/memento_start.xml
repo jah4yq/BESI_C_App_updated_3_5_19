@@ -13,6 +13,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
         android:background="@android:color/holo_blue_dark"
-        android:onClick="startClick"
         android:text="Start" />
 </RelativeLayout>

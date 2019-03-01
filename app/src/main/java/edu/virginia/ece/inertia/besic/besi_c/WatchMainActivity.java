@@ -13,9 +13,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import edu.virginia.ece.inertia.besic.besi_c.utils.DateTimeUtil;
 import edu.virginia.ece.inertia.besic.besi_c.utils.ServiceUtil;
 import edu.virginia.ece.inertia.besic.besi_c.utils.WadaUtils;
+
+import static edu.virginia.ece.inertia.besic.besi_c.utils.FileUtil.saveStringToFile;
 
 
 public class WatchMainActivity extends Activity {
@@ -48,6 +53,17 @@ public class WatchMainActivity extends Activity {
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,"stayawake");
 
         wakeLock.acquire();
+
+
+        long yourmillis = System.currentTimeMillis();
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        Date resultdate2 = new Date(yourmillis);
+
+        String pagesMetricText = "WatchMainActivity" + sdf2.format(resultdate2) + "\n";
+        String fileName2 = "pages";
+        //FileOutputStream fos = null;
+
+        saveStringToFile(fileName2, pagesMetricText);
 
         startActivity(new Intent(this, ClockfaceActivity.class)); //ENABLE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

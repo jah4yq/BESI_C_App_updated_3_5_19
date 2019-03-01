@@ -39,7 +39,7 @@
         android:layout_centerHorizontal="true"
         android:background="@android:color/holo_red_dark"
         android:onClick="dismissClick"
-        android:text="DISMISS" />
+        android:text="Cancel" />
 
     <Button
         android:id="@+id/button3"
