@@ -207,7 +207,7 @@ public class ClockfaceActivity extends Activity {
                 else if(sensecount==2){
 
                     int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-                    if (currentHour > EMA_HOUR - 1){
+                    if (currentHour < EMA_HOUR - 1){
                         dEMAEnable = 0;
                     }
 
@@ -343,6 +343,7 @@ public class ClockfaceActivity extends Activity {
 
                 //pull.postDelayed(this, 30000);
                 pull.postDelayed(this, 1000);
+
 
             }
 
