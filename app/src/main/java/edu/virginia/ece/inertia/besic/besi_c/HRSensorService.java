@@ -182,6 +182,62 @@ public class HRSensorService extends Service implements SensorEventListener {
             strBuilder.append(",");
             strBuilder.append(isCharging);
 
+            if (ClockfaceActivity.STATE ==0){
+                Intent dialogIntent = new Intent(this, ClockfaceActivity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==1){
+                Intent dialogIntent = new Intent(this, PainActivity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==2){
+                Intent dialogIntent = new Intent(this, EMAActivity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==3){
+                Intent dialogIntent = new Intent(this, EMA2Activity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==4){
+                Intent dialogIntent = new Intent(this, WaitingRoomActivity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==5){
+                Intent dialogIntent = new Intent(this, WaitingRoomActivity2.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==6){
+                Intent dialogIntent = new Intent(this, WaitingRoomActivity3.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==7){
+                Intent dialogIntent = new Intent(this, WaitingRoomActivity3.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==8){
+                Intent dialogIntent = new Intent(this, DataActivity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else if (ClockfaceActivity.STATE ==9) {
+                Intent dialogIntent = new Intent(this, dEMAActivity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+            else {
+                Intent dialogIntent = new Intent(this, ClockfaceActivity.class);
+                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(dialogIntent);
+            }
+
 
         }
         else if (sensorType == Sensor.TYPE_STEP_COUNTER){

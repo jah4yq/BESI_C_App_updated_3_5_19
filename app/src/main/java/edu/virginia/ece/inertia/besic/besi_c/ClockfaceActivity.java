@@ -8,14 +8,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.view.WindowManager;
+import android.view.Window;
+import android.content.ContentResolver;
+import android.os.Build;
+
 
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -51,9 +58,16 @@ public class ClockfaceActivity extends Activity {
 
     public static int dEMAEnable = 0;
 
+    //Variable to store brightness value
+    private int brightness;
+    //Content resolver used as a handle to the system's settings
+    private ContentResolver cResolver;
+    //Window object, that will store a reference to the current window
+    private Window window;
 
-    //public static String PTorCG = "PT";
-    public static String PTorCG = "CG";
+
+    public static String PTorCG = "PT";
+    //public static String PTorCG = "CG";
     int EMA_HOUR = 21;
     int EMA_MINUTE = 30;
 
@@ -90,6 +104,15 @@ public class ClockfaceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memento_main_clockface);
+
+        /*
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.System.canWrite(getApplicationContext())) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 200);
+            }
+        }
+*/
 
 
 
@@ -163,6 +186,8 @@ public class ClockfaceActivity extends Activity {
         //startAccel();
 
 
+
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Create the Handler object (on the main thread by default)
@@ -206,6 +231,8 @@ public class ClockfaceActivity extends Activity {
                 }
                 else if(sensecount==2){
 
+                    startEstimote();
+
                     int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
                     if (currentHour < EMA_HOUR - 1){
                         dEMAEnable = 0;
@@ -215,7 +242,7 @@ public class ClockfaceActivity extends Activity {
                     sensecount++;
                 }
                 else if(sensecount==3){
-
+                    stopEstimote();
                     sensecount++;
                 }
                 else if(sensecount==4){
@@ -229,28 +256,30 @@ public class ClockfaceActivity extends Activity {
                     sensecount++;
                 }
                 else if(sensecount==6){
-
+                    startEstimote();
                     sensecount++;
                 }
                 else if(sensecount==7){
-
+                    stopEstimote();
                     sensecount++;
                 }
                 else if(sensecount==8){
-
-                    sensecount++;
-                }
-                else if(sensecount==9){
                     startEstimote();
-
                     sensecount++;
                 }
-                else {
+                else{
                     stopEstimote();
+
+                    //sensecount++;
+                    sensecount = 0;
+                }
+                /*
+                else {
+                    startEstimote();
 
                     sensecount = 0;
                 }
-
+                */
 
 
 
@@ -342,7 +371,7 @@ public class ClockfaceActivity extends Activity {
                 // 'this' is referencing the Runnable object
 
                 //pull.postDelayed(this, 30000);
-                pull.postDelayed(this, 1000);
+                pull.postDelayed(this, 2000);
 
 
             }
@@ -350,8 +379,31 @@ public class ClockfaceActivity extends Activity {
         };
 // Start the initial runnable task by posting through the handler
         pull.post(puller);
+/*
+        // Create the Handler object (on the main thread by default)
+        final Handler brightnessControl = new Handler();
+// Define the code block to be executed
+        Runnable screenBright = new Runnable() {
+            @Override
+            public void run() {
+                // Do something here on the main thread
 
 
+
+                Log.d("Handlers", "Called on main thread");
+                // Repeat this the same runnable code block again another 2 seconds
+                // 'this' is referencing the Runnable object
+
+
+                brightnessControl.postDelayed(this, 1000);
+
+
+            }
+
+        };
+// Start the initial runnable task by posting through the handler
+        brightnessControl.post(screenBright);
+*/
 
 
 /*
@@ -479,6 +531,8 @@ public class ClockfaceActivity extends Activity {
 
 
     public void sleepClick (View v){
+
+        //setBrightness(255);
 
         long yourms = System.currentTimeMillis();
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
@@ -774,5 +828,19 @@ public class ClockfaceActivity extends Activity {
 */
 
     }
+/*
+    public void setBrightness(int brightness){
 
+        //constrain the value of brightness
+        if(brightness < 0)
+            brightness = 0;
+        else if(brightness > 255)
+            brightness = 255;
+
+
+        ContentResolver cResolver = this.getApplicationContext().getContentResolver();
+        Settings.System.putInt(cResolver, Settings.System.SCREEN_BRIGHTNESS, brightness);
+
+    }
+*/
 }
